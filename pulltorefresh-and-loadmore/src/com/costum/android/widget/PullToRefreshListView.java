@@ -133,6 +133,9 @@ public class PullToRefreshListView extends ListView implements OnScrollListener 
 
 	@Override
 	protected void onAttachedToWindow() {
+		// have to ask super to attach to window, otherwise it won't scroll in
+		// jelly bean.
+		super.onAttachedToWindow();
 		setSelection(1);
 	}
 
