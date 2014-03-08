@@ -118,6 +118,7 @@ public class PullAndLoadListView extends PullToRefreshListView {
 	 */
 	public void onLoadMoreComplete() {
 		mIsLoadingMore = false;
+		mProgressBarLoadMore.setVisibility(View.GONE);
 	}
 
 	/**
