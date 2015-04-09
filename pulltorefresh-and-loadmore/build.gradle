@@ -6,7 +6,8 @@ buildscript {
         classpath 'com.android.tools.build:gradle:1.1.0'
     }
 }
-apply plugin: 'com.android.library'
+apply plugin: 'android-library'
+apply plugin: 'maven-publish'
 
 repositories {
     mavenCentral()
@@ -36,17 +37,20 @@ android {
     }
 }
 
-def repo = new File(rootDir, "repository")
-
-apply plugin: 'maven'
-
-uploadArchives {
+android.libraryVariants
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.costum.android.widget'
+            artifactId 'pullandloadmore-aar'
+            version '1.0'
+            artifact source: file("${project.buildDir}/outputs/aar/${project.name}-release.aar")
+        }
+    }
     repositories {
-        mavenDeployer {
-            repository url: "file://${repo.absolutePath}"
-            pom.version = '1.0.0'             // version
-            pom.groupId = 'com.costum.android.widget'    // グループ名
-            pom.artifactId = 'pulltorefresh-and-loadmore-release' // ライブラリ名
+        maven {
+            url "file:${projectDir}/maven-repo"
+
         }
     }
 }
