@@ -46,7 +46,7 @@ uploadArchives {
             repository url: "file://${repo.absolutePath}"
             pom.version = '1.0.0'             // version
             pom.groupId = 'com.costum.android.widget'    // グループ名
-            pom.artifactId = 'pullandloadmore' // ライブラリ名
+            pom.artifactId = 'pulltorefresh-and-loadmore-release' // ライブラリ名
         }
     }
 }
