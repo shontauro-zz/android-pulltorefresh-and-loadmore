@@ -3,10 +3,11 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.5.+'
+        classpath 'com.android.tools.build:gradle:1.1.0'
     }
 }
 apply plugin: 'android-library'
+apply plugin: 'maven-publish'
 
 repositories {
     mavenCentral()
@@ -17,12 +18,14 @@ dependencies {
 }
 
 android {
-    compileSdkVersion 17
-    buildToolsVersion "17.0.0"
+    compileSdkVersion 7
+    buildToolsVersion "19.1.0"
 
     defaultConfig {
         minSdkVersion 7
         targetSdkVersion 16
+        versionCode 1
+        versionName "1.0"
     }
   
 	sourceSets {
@@ -31,5 +34,23 @@ android {
 			java.srcDirs = ['src']
 			res.srcDirs = ['res']
 		}
-  }
+    }
+}
+
+android.libraryVariants
+publishing {
+    publications {
+        maven(MavenPublication) {
+            groupId 'com.costum.android.widget'
+            artifactId 'pullandloadmore-aar'
+            version '1.0'
+            artifact source: file("${project.buildDir}/outputs/aar/${project.name}-release.aar")
+        }
+    }
+    repositories {
+        maven {
+            url "file:${projectDir}/maven-repo"
+
+        }
+    }
 }
