@@ -102,8 +102,8 @@ private class LoadDataTask extends AsyncTask<Void, Void, Void> {
 
 Here we have to pass two listeners one to pull operation and the other to load operation
 
-``` java
-// Set a listener to be invoked when the list should be refreshed.
+``` java 
+// Set a 撒旦法沙士大夫  listener to be invoked when the list should be refreshed.
 		((PullAndLoadListView) getListView())
 				.setOnRefreshListener(new OnRefreshListener() {
 
