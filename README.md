@@ -1,8 +1,8 @@
-The first thing that i have to say is render thanks to johannilsson because
+The first thing that i have to say is that render thanks to johannilsson because
 all the part of pull to refresh listview is based in the code of his repository 
 at <https://github.com/johannilsson/android-pulltorefresh>.
 
-The target of this project is help other to apply the  interaction pattern 
+The target of this project is help other to apply the interaction pattern 
 pull to refresh and load more on an android listview.  
 
 #Costum Load more listview for android
@@ -19,7 +19,7 @@ at <http://www.androidpatterns.com/uap_pattern/pull-to-refresh-2>
 
 Repository at <https://github.com/shontauro/android-pulltorefresh-and-loadmore>.
 
-## Usage
+##  Usage
 
 ### Layout for loadmore listview
 
